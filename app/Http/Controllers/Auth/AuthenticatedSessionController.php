@@ -36,6 +36,15 @@ class AuthenticatedSessionController extends Controller
     }
 
     /**
+     * Manual Auth-Admin
+     */
+
+    public function createAdmin()
+    {
+        return view('auth.admin_login');
+    }
+
+    /**
      * Destroy an authenticated session.
      *
      * @param  \Illuminate\Http\Request  $request
