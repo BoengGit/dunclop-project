@@ -5,47 +5,25 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>BizLand<span>.</span></h3>
+            <h3>Dunclop<span>.</span></h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              3B Cipinang Jaya <br>
+              Jakarta Timur, 13410<br>
+              Indonesia. <br><br>
+              <strong>Phone:</strong> +62 81380326543<br>
+              <strong>Email:</strong> dunclop@gmail.co.id<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p>Ingin tahu tentang lebih lanjut? Silahkan follow media sosial kami - yang IG</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://twitter.com/nipponpaintid" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/NipponPaintIndonesia" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/riaubajang/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://onepiece.fandom.com/wiki/Skypiea" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/in/bajang-riau-asqor-089b58226/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 

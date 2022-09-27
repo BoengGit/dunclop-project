@@ -7,40 +7,39 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <h3>Find Out More <span>About Us</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+          <h3>Cari Tau Lagi <span>Tentang Kami</span></h3>
+          <p>Siapkan kuas cat! Tembok, pagar, dan barang yang lainnya akan menjadi lebih berwarna seperti kehidupan kamu.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <img src="{{ asset('frontend/assets/img/about.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ asset('frontend/assets/img/about-2.jpg') }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h3>Dunclop cat yang akan membuat rumahmu menjadi lebih indah, dan nyaman.</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Merk cat yang telah dipercayai lebih dari 10 miliar penududuk bumi bahkan peududuk galaksi.
             </p>
             <ul>
               <li>
                 <i class="bx bx-store-alt"></i>
                 <div>
-                  <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                  <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade</p>
+                    <h5>Jenis Bahan yang Sangat Kuat</h5>
+                    <p>Mengandung 80% zat kalsium yang membuat tembok tidak gampang roboh</p>
                 </div>
               </li>
               <li>
                 <i class="bx bx-images"></i>
                 <div>
-                  <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                  <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
+                    <h5>Tampilan yang Lebih Indah Tanpa Luntur</h5>
+                    <p>Tembok yang gelap akan menjadi lebih berwarna tanpa ragu dengan kelunturan cat</p>
                 </div>
               </li>
             </ul>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              Memiliki variasi warna yang sangat banyak dengan kemudahan tukang yang akan siap membantu mengecat ruang anda.
+              Memiliki pelayanan, "Anda membeli, kami siap melayani + mengecat". Setiap anggota memiliki tingkat mengecat yang
+              sangat tinggi, request apapun dari konsumen tukang siap melakukan.
             </p>
           </div>
         </div>
