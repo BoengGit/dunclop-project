@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\AdminRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
@@ -32,17 +33,29 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->route('home');
     }
 
     /**
      * Manual Auth-Admin
      */
 
-    public function createAdmin()
-    {
-        return view('auth.admin_login');
-    }
+        public function createAdmin()
+        {
+            return view('auth.admin_login');
+        }
+
+        public function storeAdmin(AdminRequest $request)
+        {
+            $request->authenticate();
+
+            $request->session()->regenerate();
+
+        return redirect()->route('dashboard');
+        }
+    /**
+     * End Manual Auth-Admin
+     */
 
     /**
      * Destroy an authenticated session.

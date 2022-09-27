@@ -70,7 +70,8 @@
               <!-- /Logo -->
               <h4 class="mb-2">Selamat datang di Dunclop! 👋</h4>
               <p class="mb-4">Tolong masukan akun admin anda untuk melanjutkan!</p>
-              <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
+
+              <form id="formAuthentication" class="mb-3" action="{{ route('login-admin') }}" method="POST">
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Username</label>
@@ -103,6 +104,7 @@
                   <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                 </div>
               </form>
+
             </div>
           </div>
           <!-- /Register -->
