@@ -7,10 +7,17 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto" href="#contact">contact</a></li>
                 <li>
-                    <a class="nav-link scrollto" href="{{ route('login') }}">Login</a>
+                    @if (Auth::check())
+                        @if (Auth::user()->role == 1)
+                            <a class="nav-link scrollto" href="{{ route('dashboard') }}">Dashboard</a>
+                        @else
+                            <a class="nav-link scrollto" href="{{ route('home') }}">Menu</a>
+                        @endif
+                    @endif
+                    @guest
+                        <a class="nav-link scrollto" href="{{ route('login') }}">Login</a>
+                    @endguest
                 </li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>

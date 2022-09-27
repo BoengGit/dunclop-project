@@ -23,6 +23,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/home', function () {
     return view('pages.pages_master');
-})->middleware(['auth'])->name('home');
+})->middleware(['auth', 'isUser'])->name('home');
 
 require __DIR__.'/auth.php';
