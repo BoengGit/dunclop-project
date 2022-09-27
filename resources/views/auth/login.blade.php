@@ -15,7 +15,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Login Dunclop | Admin</title>
+    <title>Login Dunclop</title>
 
     <meta name="description" content="" />
 
@@ -37,7 +37,7 @@
 
         @media (min-width: 1025px) {
             .h-custom-2 {
-                height: 100%;
+                height: 50%;
             }
         }
     </style>
@@ -52,8 +52,11 @@
                 <div class="col-sm-6 text-black">
 
                     <div class="px-5 ms-xl-4">
-                    <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-                    <span class="h1 fw-bold mb-0">Logo</span>
+                        <center>
+                            <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;">
+                                <img src="{{ asset('backend/assets/img/favicon/logo-app.png') }}" alt="logo-dunclop" style="width: 40%">
+                            </i>
+                        </center>
                     </div>
 
                     <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
@@ -77,7 +80,7 @@
                         </div>
 
                         <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-                        <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
+                        <p>Apa.. belum punya akun?! <a href="{{ route('register') }}" class="link-info">Register Dulu Aja</a></p>
 
                     </form>
 
@@ -85,8 +88,8 @@
 
                 </div>
                 <div class="col-sm-6 px-5 d-none d-sm-block">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-                    alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+                    <img src="https://images.unsplash.com/photo-1663365848016-625bcd136340?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80"
+                    alt="Login image" class="w-100 vh-90 pd-5" style="object-fit: cover; object-position: left;">
                 </div>
             </div>
         </div>
