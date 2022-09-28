@@ -20,59 +20,57 @@
             </a>
         </li>
 
-        <!-- Layouts -->
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
-            </a>
-
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="layouts-without-menu.html" class="menu-link">
-                        <div data-i18n="Without menu">Without menu</div>
-                    </a>
-            </ul>
-        </li>
-
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Pages</span>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
+                <i class="menu-icon tf-icons bx bx-user-circle"></i>
+                <div data-i18n="Account Settings">User</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="pages-account-settings-account.html" class="menu-link">
-                        <div data-i18n="Account">Account</div>
+                        <div data-i18n="Account">Detail User</div>
                     </a>
                 </li>
             </ul>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
+                <i class="menu-icon tf-icons bx bxl-product-hunt"></i>
+                <div data-i18n="Authentications">Produk</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                        <div data-i18n="Basic">Login</div>
+                        <div data-i18n="Basic">Detail Produk</div>
                     </a>
                 </li>
             </ul>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
+                <i class="menu-icon tf-icons bx bxl-paypal"></i>
+                <div data-i18n="Misc">Transaksi</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="pages-misc-error.html" class="menu-link">
-                        <div data-i18n="Error">Error</div>
+                        <div data-i18n="Error">Detail Transaksi</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-task"></i>
+                <div data-i18n="Misc">Laporan</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="pages-misc-error.html" class="menu-link">
+                        <div data-i18n="Error">Detail Laporan</div>
                     </a>
                 </li>
             </ul>
