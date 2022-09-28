@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(AdminSeeder::class);
 
-        User::factory(10)->create();
+        User::factory(20)->create();
     }
 }

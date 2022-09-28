@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.user_index');
+        $dataUser = User::latest()->where('role', 0)->paginate(10);
+        return view('admin.user.user_index', compact('dataUser'));
     }
 
     /**
@@ -45,7 +47,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $dataUser = User::findOrFail($id);
+        return view('admin.user.user_show', compact('dataUser'));
     }
 
     /**

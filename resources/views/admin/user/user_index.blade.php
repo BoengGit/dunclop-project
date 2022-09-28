@@ -8,7 +8,8 @@
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-1">
-                            <img class="card-img card-img-left" src="{{ asset('backend/assets/img/elements/12.jpg') }}" alt="Card image">
+                            <img class="card-img card-img-left" src="{{ asset('backend/assets/img/elements/12.jpg') }}"
+                                alt="Card image">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -28,58 +29,40 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Project</th>
-                                <th>Client</th>
-                                <th>Users</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th class="col-1">No</th>
+                                <th class="col-5">Name</th>
+                                <th class="col-4">Email</th>
+                                <th class="col-2">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
-                            <tr>
-                                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong>
-                                </td>
-                                <td>Albert Cook</td>
-                                <td>
-                                    <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                            class="avatar avatar-xs pull-up" title=""
-                                            data-bs-original-title="Lilian Fuller">
-                                            <img src="{{ asset('backend/assets/img/avatars/5.png') }}" alt="Avatar" class="rounded-circle">
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                            class="avatar avatar-xs pull-up" title=""
-                                            data-bs-original-title="Sophia Wilkerson">
-                                            <img src="{{ asset('backend/assets/img/avatars/6.png') }}" alt="Avatar" class="rounded-circle">
-                                        </li>
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                            class="avatar avatar-xs pull-up" title=""
-                                            data-bs-original-title="Christina Parker">
-                                            <img src="{{ asset('backend/assets/img/avatars/7.png') }}" alt="Avatar" class="rounded-circle">
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td><span class="badge bg-label-primary me-1">Active</span></td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                            data-bs-toggle="dropdown">
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                    class="bx bx-edit-alt me-1"></i> Edit</a>
-                                            <a class="dropdown-item" href="javascript:void(0);"><i
-                                                    class="bx bx-trash me-1"></i> Delete</a>
+                            @foreach ($dataUser as $key => $item)
+                                <tr>
+                                    <td>{{ $key + $dataUser->firstItem() }}</td>
+                                    <td>{{ $item->firstname }} {{ $item->lastname }}</td>
+                                    <td>{{ $item->email }}</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                data-bs-toggle="dropdown">
+                                                <i class="bx bx-dots-vertical-rounded"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{{ route('user.show', $item->id) }}"><i
+                                                        class="bx bx-edit-alt me-1"></i>Show</a>
+                                                <a class="dropdown-item" href="javascript:void(0);"><i
+                                                        class="bx bx-trash me-1"></i> Delete</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+        {{ $dataUser->links('pagination::bootstrap-5') }}
         <!-- Footer -->
         @include('admin.body.footer')
         <!-- / Footer -->
