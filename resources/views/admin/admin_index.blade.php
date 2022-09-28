@@ -13,7 +13,7 @@
                                     <p class="mb-4">
                                         Silahkan cek perubahan terbarumu!
                                     </p>
-                                    <a href="javascript:;" class="btn btn-sm btn-outline-primary">Lihat Perubahan</a>
+                                    <a href="{{ route('user.index') }}" class="btn btn-sm btn-outline-primary">Lihat Perubahan</a>
                                 </div>
                             </div>
                             <div class="col-sm-5 text-center text-sm-left">
