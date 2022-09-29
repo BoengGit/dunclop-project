@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,7 @@ Route::get('/home', function () {
 })->middleware(['auth', 'isUser'])->name('home');
 
 Route::resource('user', UserController::class)->middleware(['auth', 'isAdmin']);
+
+Route::resource('produk', ProdukController::class)->middleware(['auth', 'isAdmin']);
 
 require __DIR__.'/auth.php';

@@ -36,14 +36,14 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ Route::is(['produk.index', 'produk.create']) ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bxl-product-hunt"></i>
                 <div data-i18n="Authentications">Produk</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                <li class="menu-item {{ Route::is(['produk.index', 'produk.create']) ? 'active' : '' }}">
+                    <a href="{{ route('produk.index') }}" class="menu-link">
                         <div data-i18n="Basic">Detail Produk</div>
                     </a>
                 </li>
