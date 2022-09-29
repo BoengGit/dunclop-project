@@ -74,7 +74,8 @@ class ProdukController extends Controller
      */
     public function edit(Produk $produk)
     {
-        //
+        $dataProduk = $produk;
+        return view('admin.produk.produk_edit', compact('dataProduk'));
     }
 
     /**
@@ -86,7 +87,33 @@ class ProdukController extends Controller
      */
     public function update(Request $request, Produk $produk)
     {
-        //
+        if ($request->file('produk_image')) {
+
+            $image = $request->file('produk_image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension(); // 343434.png
+            Image::make($image)->resize(200, 200)->save('upload/produk/' . $name_gen);
+            $save_url = 'upload/produk/' . $name_gen;
+
+            $produk->update([
+                'nama' => $request->nama,
+                'merk' => $request->merk,
+                'harga' => $request->harga,
+                'produk_image' => $save_url,
+                'updated_at' => Carbon::now(),
+            ]);
+
+            return redirect()->route('produk.index');
+        } else {
+
+            $produk->update([
+                'nama' => $request->nama,
+                'merk' => $request->merk,
+                'harga' => $request->harga,
+                'updated_at' => Carbon::now(),
+            ]);
+
+            return redirect()->route('produk.index');
+        } // end else
     }
 
     /**
@@ -98,7 +125,7 @@ class ProdukController extends Controller
     public function destroy(Produk $produk)
     {
         $img = $produk->produk_image;
-        // unlink($img);
+        unlink($img);
         $produk->delete();
         return redirect()->back();
     }

@@ -24,7 +24,7 @@
                                     placeholder="Dunclop">
                             </div>
 
-                            <label class="form-label" for="basic-default-company">Merk</label>
+                            <label class="form-label" for="basic-default-company">Harga</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Rp</span>
                                 <input type="text" class="form-control" placeholder="99.999"
