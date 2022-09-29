@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $dataUser = User::latest()->where('role', 0)->paginate(10);
+        $dataUser = User::where('role', 0)->latest()->paginate(7);
         return view('admin.user.user_index', compact('dataUser'));
     }
 
@@ -82,6 +82,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userData = User::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

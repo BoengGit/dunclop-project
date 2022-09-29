@@ -50,8 +50,12 @@
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="{{ route('user.show', $item->id) }}"><i
                                                         class="bx bx-edit-alt me-1"></i>Show</a>
-                                                <a class="dropdown-item" href="javascript:void(0);"><i
-                                                        class="bx bx-trash me-1"></i> Delete</a>
+                                                <form action="{{ route('user.destroy', $item->id) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item""><i
+                                                            class="bx bx-trash me-1"></i> Delete</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </td>

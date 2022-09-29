@@ -26,6 +26,6 @@ Route::get('/home', function () {
     return view('pages.pages_master');
 })->middleware(['auth', 'isUser'])->name('home');
 
-Route::resource('user', UserController::class);
+Route::resource('user', UserController::class)->middleware(['auth', 'isAdmin']);
 
 require __DIR__.'/auth.php';
