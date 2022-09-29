@@ -14,6 +14,7 @@
                                 <th class="col-2">No</th>
                                 <th class="col-3">Name</th>
                                 <th class="col-2">Merk</th>
+                                <th class="col-2">Image</th>
                                 <th class="col-3">Harga</th>
                                 <th class="col-2">Status</th>
                             </tr>
@@ -22,10 +23,10 @@
                             @foreach ($dataProduk as $key => $item)
                                 <tr>
                                     <td>{{ $key + $dataProduk->firstItem() }}</td>
-                                    <td>{{ $item->name }}</td>
+                                    <td>{{ $item->nama }}</td>
                                     <td>{{ $item->merk }}</td>
-                                    <td>{{ $item->produk_image }}</td>
-                                    <td>{{ $item->harga }}</td>
+                                    <td> <img src="{{ asset( $item->produk_image ) }}" style="width:100px; height:90px"> </td>
+                                    <td>Rp {{ $item->harga }},000</td>
                                     <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -34,7 +35,7 @@
                                             </button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="{{ route('produk.edit', $item->id) }}"><i
-                                                        class="bx bx-edit-alt me-1"></i>Show</a>
+                                                        class="bx bx-edit-alt me-1"></i>Edit</a>
                                                 <form action="{{ route('produk.destroy', $item->id) }}" method="POST">
                                                     @method('DELETE')
                                                     @csrf

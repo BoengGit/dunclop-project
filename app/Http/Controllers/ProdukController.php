@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Image;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
@@ -14,8 +17,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $dataProduk = Produk::latest()->paginate(7);
-        return view('admin.produk.produk_index', compact(['dataProduk']));
+        $dataProduk = Produk::latest()->paginate(4);
+        return view('admin.produk.produk_index', compact('dataProduk'));
     }
 
     /**
@@ -36,7 +39,20 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image = $request->file('produk_image');
+        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension(); // 343434.png
+        Image::make($image)->resize(200, 200)->save('upload/produk/' . $name_gen);
+        $save_url = 'upload/produk/' . $name_gen;
+
+        Produk::insert([
+            'nama' => $request->nama,
+            'merk' => $request->merk,
+            'harga' => $request->harga,
+            'produk_image' => $save_url,
+            'created_at' => Carbon::now(),
+        ]);
+
+        return redirect()->route('produk.index');
     }
 
     /**
@@ -81,6 +97,8 @@ class ProdukController extends Controller
      */
     public function destroy(Produk $produk)
     {
+        $img = $produk->produk_image;
+        // unlink($img);
         $produk->delete();
         return redirect()->back();
     }

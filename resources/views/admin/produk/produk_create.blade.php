@@ -11,11 +11,12 @@
                         <small class="text-muted float-end"></small>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Nama</label>
                                 <input type="text" class="form-control" id="basic-default-fullname" name="nama"
-                                    placeholder="Yanto">
+                                    placeholder="Cat keras">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-company">Merk</label>
@@ -26,13 +27,13 @@
                             <label class="form-label" for="basic-default-company">Merk</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Rp</span>
-                                <input type="number" class="form-control" placeholder="99.999"
+                                <input type="text" class="form-control" placeholder="99.999"
                                     aria-label="Amount (to the nearest dollar)" name="harga">
                                 <span class="input-group-text">.00</span>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="formFileMultiple">Upload Image Produk</label>
-                                <input class="form-control" type="file" id="formFileMultiple" multiple="">
+                                <input class="form-control" type="file" id="formFileMultiple" multiple="" name="produk_image">
                             </div>
                             <button type="submit" class="btn btn-primary">Send</button>
                         </form>
