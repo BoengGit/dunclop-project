@@ -50,15 +50,41 @@
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="{{ route('user.show', $item->id) }}"><i
                                                         class="bx bx-edit-alt me-1"></i>Show</a>
-                                                <form action="{{ route('user.destroy', $item->id) }}" method="POST">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button type="submit" class="dropdown-item""><i
-                                                            class="bx bx-trash me-1"></i> Delete</button>
-                                                </form>
+                                                <button class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#modalToggle{{ $item->id }}"><i
+                                                        class="bx bx-trash me-1"></i>
+                                                    Delete</button>
                                             </div>
                                         </div>
                                     </td>
+
+                                    <!-- Initial Modal -->
+                                    <form action="{{ route('user.destroy', $item->id) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <div class="modal fade" id="modalToggle{{ $item->id }}"
+                                            aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none;"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalToggleLabel">Apakah anda yakin?</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Anda akan menghapus user <span style="font-weight: 900">{{ $item->firstname }} {{ $item->lastname }}</span>  secara permanent!
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary"
+                                                            data-bs-toggle="modal" data-bs-dismiss="modal">Cancel</button>
+                                                        <button type="submit" class="btn btn-danger"
+                                                            data-bs-toggle="modal">Delete</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- End Initial Modal -->
+
                                 </tr>
                             @endforeach
                         </tbody>

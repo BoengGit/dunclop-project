@@ -51,7 +51,7 @@ class AuthenticatedSessionController extends Controller
 
             $request->session()->regenerate();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Admin Login Success!');
         }
     /**
      * End Manual Auth-Admin
