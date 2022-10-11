@@ -49,14 +49,14 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
+        <li class="menu-item {{ Route::is(['transaksi.index', 'transaksi.create']) ? 'active' : '' }}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bxl-paypal"></i>
                 <div data-i18n="Misc">Transaksi</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
+                <li class="menu-item {{ Route::is(['transaksi.index', 'transaksi.create']) ? 'active' : '' }}">
+                    <a href="{{ route('transaksi.index') }}" class="menu-link">
                         <div data-i18n="Error">Detail Transaksi</div>
                     </a>
                 </li>
