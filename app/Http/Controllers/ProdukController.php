@@ -127,6 +127,6 @@ class ProdukController extends Controller
         $img = $produk->produk_image;
         unlink($img);
         $produk->delete();
-        return redirect()->back();
+        return response()->json(['status'=>'Berhasil menghapus produk']);
     }
 }
