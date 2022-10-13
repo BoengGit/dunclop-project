@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('deskripsi')->nullable();
             $table->integer('kuantitas');
             $table->integer('harga_produk');
-            $table->integer('produk');
             $table->integer('total_harga');
             $table->tinyInteger('status')->default('0')->comment('0=Pending, 1=Approved');
             $table->timestamps();

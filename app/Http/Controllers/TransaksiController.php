@@ -40,7 +40,34 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->produk_id == null){
+            $notification = array(
+                'message' => 'Tolong masukan nama produknya',
+                'alert-type' => 'error',
+            );
+            return redirect()->back()->with($notification);
+        } else {
+            $count_category = count($request->produk_id);
+            for ($i=0; $i < $count_category; $i++) {
+                $transaksi = new Transaksi();
+                $transaksi->tanggal = date('Y-m-d', strtotime($request->tanggal[$i]));
+                $transaksi->nomor_antrian = $request->nomor_antrian[$i];
+                $transaksi->user_id = $request->user_id[$i];
+                $transaksi->produk_id = $request->produk_id[$i];
+                $transaksi->kuantitas = $request->kuantitas[$i];
+                $transaksi->harga_produk = $request->harga_produk[$i];
+                $transaksi->deskripsi = $request->deskripsi[$i];
+                $transaksi->total_harga = $request->total_harga[$i];
+                $transaksi->status = '0';
+                $transaksi->save();
+            }
+        }
+
+        $notification = array(
+            'message' => 'Sukses di save',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('transaksi.index')->with($notification);
     }
 
     /**

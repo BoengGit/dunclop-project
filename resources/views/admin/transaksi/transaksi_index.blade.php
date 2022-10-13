@@ -25,7 +25,7 @@
                             @foreach ($transaksi as $key => $item)
                                 <tr>
                                     {{-- <input type="hidden" class="serdelete_val_id" value="{{ $item->id }}"> --}}
-                                    <td>{{ $key + $dataProduk->firstItem() }}</td>
+                                    <td>{{ $key + $transaksi->firstItem() }}</td>
                                     <td>{{ $item->nomor_antrian }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     <td>{{ $item->user_id }}</td>

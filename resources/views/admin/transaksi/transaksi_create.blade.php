@@ -40,8 +40,8 @@
                         <div class="mb-3 row">
                             <label for="html5-date-input" class="col-md-2 col-form-label">Nama Produk</label>
                             <div class="col-md-8">
-                                <select class="form-select" id="produk_id"
-                                    aria-label="Default select example" name="produk_id">
+                                <select class="form-select" id="produk_id" aria-label="Default select example"
+                                    name="produk_id">
                                     {{-- <option selected="">Open this select menu</option> --}}
                                     @foreach ($produks as $produk)
                                         <option value="{{ $produk->id }}">{{ $produk->nama }}</option>
@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="" method="">
+                        <form action="{{ route('transaksi.store') }}" method="POST">
                             @csrf
                             <table class="table-sm table-bordered" width="100%" style="border-color: #ddd ;">
                                 <thead>
@@ -86,8 +86,9 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <button type="submit" class="btn btn-primary mt-4">Purchase Store</button>
                         </form>
-                        <button type="submit" class="btn btn-primary mt-4">Purchase Store</button>
                     </div>
                 </div>
             </div>
@@ -128,8 +129,8 @@
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            $(document).on("click",".addeventmore", function(){
+        $(document).ready(function() {
+            $(document).on("click", ".addeventmore", function() {
                 var tanggal = $('#tanggal').val();
                 var nomor_antrian = $('#nomor_antrian').val();
                 var user_id = $('#user_id').val();
@@ -137,42 +138,54 @@
                 var nama_produk = $('#produk_id').find('option:selected').text();
 
                 if (tanggal == "") {
-                    $.notify("Mohon masukan tanggal", {globalPosition: 'bottom right', className:'error' })
+                    $.notify("Mohon masukan tanggal", {
+                        globalPosition: 'bottom right',
+                        className: 'error'
+                    })
                     return false;
                 }
                 if (nomor_antrian == "") {
-                    $.notify("Mohon masukan nomor antrian", {globalPosition: 'bottom right', className:'error' })
+                    $.notify("Mohon masukan nomor antrian", {
+                        globalPosition: 'bottom right',
+                        className: 'error'
+                    })
                     return false;
                 }
                 if (user_id == "") {
-                    $.notify("Mohon masukan user", {globalPosition: 'bottom right', className:'error' })
+                    $.notify("Mohon masukan user", {
+                        globalPosition: 'bottom right',
+                        className: 'error'
+                    })
                     return false;
                 }
                 if (produk_id == "") {
-                    $.notify("Mohon masukan produk", {globalPosition: 'bottom right', className:'error' })
+                    $.notify("Mohon masukan produk", {
+                        globalPosition: 'bottom right',
+                        className: 'error'
+                    })
                     return false;
                 }
 
                 var source = $("#document-template").html();
                 var tamplate = Handlebars.compile(source);
                 var data = {
-                    tanggal:tanggal,
-                    nomor_antrian:nomor_antrian,
-                    user_id:user_id,
-                    produk_id:produk_id,
-                    nama_produk:nama_produk
+                    tanggal: tanggal,
+                    nomor_antrian: nomor_antrian,
+                    user_id: user_id,
+                    produk_id: produk_id,
+                    nama_produk: nama_produk
                 };
 
                 var html = tamplate(data);
                 $("#addRow").append(html);
             });
 
-            $(document).on("click", ".removeeventmore", function(event){
+            $(document).on("click", ".removeeventmore", function(event) {
                 $(this).closest(".delete_add_more_item").remove();
                 totalAmountPrice();
             });
 
-            $(document).on('keyup click', '.harga_produk,.kuantitas', function(){
+            $(document).on('keyup click', '.harga_produk,.kuantitas', function() {
                 var harga_produk = $(this).closest("tr").find("input.harga_produk").val();
                 var kuantitas = $(this).closest("tr").find("input.kuantitas").val();
                 var total = harga_produk * kuantitas;
@@ -182,9 +195,9 @@
 
             // kalkulasi total
 
-            function totalAmountPrice(){
+            function totalAmountPrice() {
                 var sum = 0;
-                $(".total_harga").each(function(){
+                $(".total_harga").each(function() {
                     var value = $(this).val();
                     if (!isNaN(value) && value.lenght != 0) {
                         sum += parseFloat(value);
@@ -195,5 +208,4 @@
 
         });
     </script>
-
 @endsection
