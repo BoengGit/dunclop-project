@@ -27,10 +27,10 @@
                                     {{-- <input type="hidden" class="serdelete_val_id" value="{{ $item->id }}"> --}}
                                     <td>{{ $key + $transaksi->firstItem() }}</td>
                                     <td>{{ $item->nomor_antrian }}</td>
-                                    <td>{{ $item->tanggal }}</td>
-                                    <td>{{ $item->user_id }}</td>
+                                    <td>{{ date('d-m-Y',strtotime($item->tanggal)) }}</td>
+                                    <td>{{ $item->user->firstname }} {{ $item->user->lastname }}</td>
                                     <td>{{ $item->kuantitas }}</td>
-                                    <td>{{ $item->produk_id }}</td>
+                                    <td>{{ $item->produk->nama }}</td>
                                     <td>
                                         <span class="btn btn-warning">Pending</span>
                                     </td>
