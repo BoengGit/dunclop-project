@@ -17,7 +17,7 @@
                                 <th class="col-1">User</th>
                                 <th class="col-1">Kuantitas</th>
                                 <th class="col-1">Nama Produk</th>
-                                <th class="col-1">Status</th>
+                                <th class="col-1">Harga</th>
                                 <th class="col-1">Action</th>
                             </tr>
                         </thead>
@@ -31,25 +31,23 @@
                                     <td>{{ $item->user->firstname }} {{ $item->user->lastname }}</td>
                                     <td>{{ $item->kuantitas }}</td>
                                     <td>{{ $item->produk->nama }}</td>
+                                    <td>Rp{{ $item->total_harga }}</td>
                                     <td>
-                                        <span class="btn btn-warning">Pending</span>
-                                    </td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                data-bs-toggle="dropdown">
-                                                <i class="bx bx-dots-vertical-rounded"></i>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                <button type="button" class="dropdown-item servicedeletebtn"
-                                                    data-id="{{ $item->id }}" data-nama=""><i
-                                                        class="bx bx-trash me-1"></i> Delete</button>
-                                                </form>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                    data-bs-toggle="dropdown">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                    <button type="submit" class="dropdown-item servicedeletebtn"
+                                                        data-id="{{ $item->id }}" data-nama=""><i
+                                                            class="bx bx-trash me-1"></i> Delete</button>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
@@ -64,7 +62,7 @@
         <!-- / Footer -->
 
         <!-- SweetAlert -->
-        <script>
+        {{-- <script>
             $(document).ready(function() {
 
                 $.ajaxSetup({
@@ -110,6 +108,6 @@
                         });
                 });
             })
-        </script>
+        </script> --}}
     </div>
 @endsection

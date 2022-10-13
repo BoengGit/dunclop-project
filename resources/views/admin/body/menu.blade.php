@@ -57,7 +57,7 @@
             <ul class="menu-sub">
                 <li class="menu-item {{ Route::is(['transaksi.index', 'transaksi.create']) ? 'active' : '' }}">
                     <a href="{{ route('transaksi.index') }}" class="menu-link">
-                        <div data-i18n="Error">Detail Transaksi</div>
+                        <div data-i18n="Error">All Transaksi</div>
                     </a>
                 </li>
             </ul>

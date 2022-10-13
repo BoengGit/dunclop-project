@@ -112,6 +112,8 @@ class TransaksiController extends Controller
      */
     public function destroy(Transaksi $transaksi)
     {
-        //
+        $transaksi->delete();
+
+        return redirect()->back();
     }
 }
