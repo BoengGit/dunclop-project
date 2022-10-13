@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -14,7 +16,8 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        return view('admin.transaksi.transaksi_index');
+        $transaksi = Transaksi::latest()->paginate(4);
+        return view('admin.transaksi.transaksi_index', compact('transaksi'));
     }
 
     /**
@@ -24,7 +27,9 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::get()->where('role', 0);
+        $produks = Produk::all();
+        return view('admin.transaksi.transaksi_create', compact('users', 'produks'));
     }
 
     /**
