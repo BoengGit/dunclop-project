@@ -62,17 +62,4 @@
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-task"></i>
-                <div data-i18n="Misc">Laporan</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
-                        <div data-i18n="Error">Detail Laporan</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
 </aside>

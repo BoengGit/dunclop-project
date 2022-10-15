@@ -116,4 +116,11 @@ class TransaksiController extends Controller
 
         return redirect()->back();
     }
+
+    public function laporan()
+    {
+        $transaksi = Transaksi::get();
+        return view('admin.transaksi.laporan.laporan_index', compact('transaksi'));
+    }
+
 }

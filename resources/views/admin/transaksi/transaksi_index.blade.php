@@ -1,6 +1,6 @@
 @extends('admin.admin_master')
 @section('main')
-<div class="content-wrapper">
+    <div class="content-wrapper">
         <!-- Content -->
         <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Dashboard /</span> Transaksi </h4>
@@ -27,27 +27,21 @@
                                     {{-- <input type="hidden" class="serdelete_val_id" value="{{ $item->id }}"> --}}
                                     <td>{{ $key + $transaksi->firstItem() }}</td>
                                     <td>{{ $item->nomor_antrian }}</td>
-                                    <td>{{ date('d-m-Y',strtotime($item->tanggal)) }}</td>
+                                    <td>{{ date('d-m-Y', strtotime($item->tanggal)) }}</td>
                                     <td>{{ $item->user->firstname }} {{ $item->user->lastname }}</td>
                                     <td>{{ $item->kuantitas }}</td>
                                     <td>{{ $item->produk->nama }}</td>
                                     <td>Rp{{ $item->total_harga }}</td>
                                     <td>
-                                            <div class="dropdown">
-                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                    data-bs-toggle="dropdown">
-                                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST">
-                                                        @method('DELETE')
-                                                        @csrf
-                                                    <button type="submit" class="dropdown-item servicedeletebtn"
-                                                        data-id="{{ $item->id }}" data-nama=""><i
-                                                            class="bx bx-trash me-1"></i> Delete</button>
-                                                    </form>
-                                                </div>
-                                            </div>
+                                        <div class="d-flex">
+                                            <form action="{{ route('transaksi.destroy', $item->id) }}" method="POST">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn rounded-pill btn-outline-danger"
+                                                    data-id="{{ $item->id }}" data-nama=""><i
+                                                        class="bx bx-trash me-1"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
@@ -55,6 +49,9 @@
                     </table>
                 </div>
             </div>
+            <a href="{{ route('laporan.index') }}" class="btn rounded-pill btn-info  mt-2" style="margin-left: 5px"
+                data-nama=""><i class="bx bx-printer"></i>
+            </a>
         </div>
         {{ $transaksi->links('pagination::bootstrap-5') }}
         <!-- Footer -->
